@@ -15,7 +15,7 @@ import {
           <SignInButton mode="modal" />
         </SignedOut>
         <SignedIn>
-          <Navigate to="/" />
+          <Navigate to="/main" />
         </SignedIn>
       </div>
     );

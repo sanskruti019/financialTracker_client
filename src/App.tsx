@@ -12,21 +12,21 @@ function App() {
     <Router>
       <div className="app-container">
         <div className="navbar">
-          <Link to="/auth"> Dashboard</Link>
+          <Link to="/"> Dashboard</Link>
           <SignedIn>
             <UserButton />
           </SignedIn>
         </div>
         <Routes>
           <Route
-            path="/"
+            path="/main"
             element={
               <FinanchialRecordsProvider>
                 <Dashboard />
               </FinanchialRecordsProvider>
             }
           />
-          <Route path="/auth" element={<Auth />} />
+          <Route path="/" element={<Auth />} />
         </Routes>
       </div>
     </Router>
