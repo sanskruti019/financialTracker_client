@@ -33,7 +33,7 @@ export const FinanchialRecordsProvider = ({
   const fetchRecords = async () => {
     if (!user) return;
     const response = await fetch(
-      `http://localhost:3001/financhial-records/getAllByUserID/${user.id}`
+      `https://financialtracker-server.onrender.com/financhial-records/getAllByUserID/${user.id}`
     );
 
     if (response.ok) {
@@ -48,7 +48,7 @@ export const FinanchialRecordsProvider = ({
   }, [user]);
 
   const addRecord = async (record: FinanchialRecord) => {
-    const response = await fetch("http://localhost:3001/financhial-records", {
+    const response = await fetch("https://financialtracker-server.onrender.com/financhial-records", {
       method: "POST",
       body: JSON.stringify(record),
       headers: {
@@ -66,7 +66,7 @@ export const FinanchialRecordsProvider = ({
 
   const updateRecord = async (id: string, newRecord: FinanchialRecord) => {
     const response = await fetch(
-      `http://localhost:3001/financhial-records/${id}`,
+      `https://financialtracker-server.onrender.com/financhial-records/${id}`,
       {
         method: "PUT",
         body: JSON.stringify(newRecord),
@@ -94,7 +94,7 @@ export const FinanchialRecordsProvider = ({
 
   const deleteRecord = async (id: string) => {
     const response = await fetch(
-      `http://localhost:3001/financhial-records/${id}`,
+      `https://financialtracker-server.onrender.com/financhial-records/${id}`,
       {
         method: "DELETE",
       }
