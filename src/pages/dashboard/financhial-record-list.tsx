@@ -3,7 +3,7 @@ import {
   FinanchialRecord,
   useFinanchialRecords,
 } from "../../contexts/financhial-record-context";
-import { useTable, Column, CellProps } from "react-table";
+import { useTable, Column, CellProps, Row } from "react-table";
 
 interface EditableCellProps extends CellProps<FinanchialRecord> {
   updateRecord: (rowIndex: number, columnId: string, value: any) => void;
@@ -146,7 +146,7 @@ export const FinanchialRecordList = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {rows.map((row, idx) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
